@@ -133,9 +133,9 @@ export const site: SiteContent = {
   // TODO: CLIENT DATA — coordinates are APPROXIMATE (street-level geocode not
   // verified). Confirm before launch; they feed JSON-LD geo.
   geo: { latitude: 37.958, longitude: -122.332 },
-  // TODO: CLIENT DATA — (510) 555-0100 is an obvious placeholder. Replace with
+  // TODO: CLIENT DATA — (510) 760-2164 is an obvious placeholder. Replace with
   // the real plaza/leasing phone number (drives the header CTA and footer).
-  phone: { display: "(510) 555-0100", e164: "+15105550100" },
+  phone: { display: "(510) 760-2164", e164: "+15107602164" },
   email: undefined, // TODO: CLIENT DATA — general plaza inbox, if one exists
   // TODO: CLIENT DATA — plaza-wide hours below are placeholders; confirm.
   hours: [

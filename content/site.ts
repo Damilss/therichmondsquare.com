@@ -65,6 +65,14 @@ export type SiteContent = {
     mapTitle: string;
   };
   contact: { heading: string; blurb: string; submit: string };
+  ownerPromo: {
+    eyebrow: string; // small kicker above the heading
+    heading: string; // the firm's name / value line
+    blurb: string;
+    cta: { label: string; href?: string }; // no href → banner falls back to tel: phone.e164
+    logo?: string; // public/ path, shown above the eyebrow once provided
+    logoAlt?: string;
+  };
   forms: {
     labels: {
       name: string;
@@ -110,9 +118,9 @@ export type SiteContent = {
 
 export const site: SiteContent = {
   name: "Richmond Square",
-  tagline: "Your neighborhood plaza on San Pablo Avenue — ten local businesses, one friendly stop.",
+  tagline: "Your neighborhood plaza on San Pablo Avenue — nine local businesses, one friendly stop.",
   description:
-    "Richmond Square is a neighborhood retail plaza at 12669 San Pablo Ave, Richmond, CA 94805 — home to ten local businesses, from flowers and fashion to salons and services.",
+    "Richmond Square is a neighborhood retail plaza at 12669 San Pablo Ave, Richmond, CA 94805 — home to nine local businesses, from flowers and fashion to salons and services.",
   url: "https://therichmondsquare.com",
   seo: {
     titleDefault: "Richmond Square — Retail Plaza in Richmond, CA",
@@ -171,7 +179,7 @@ export const site: SiteContent = {
   },
   directory: {
     heading: "The businesses",
-    intro: "Ten neighbors under one roof — say hi, call ahead, or stop by.",
+    intro: "Nine neighbors under one roof — say hi, call ahead, or stop by.",
     filterAll: "All",
     labels: {
       suite: "Suite",
@@ -189,7 +197,7 @@ export const site: SiteContent = {
     // TODO: CLIENT COPY — placeholder prose; replace with the plaza's real story.
     paragraphs: [
       "[Placeholder copy] Richmond Square has been a fixture on San Pablo Avenue for years — a small neighborhood plaza where Richmond and El Cerrito residents run their errands, grab a bite, and support local owners.",
-      "[Placeholder copy] Free parking on site, step-free access to every storefront, and ten independent businesses that know their regulars by name.",
+      "[Placeholder copy] Free parking on site, step-free access to every storefront, and nine independent businesses that know their regulars by name.",
     ],
   },
   leasing: {
@@ -220,6 +228,18 @@ export const site: SiteContent = {
     blurb:
       "Questions about the plaza or one of the businesses? Send a note and we'll point you the right way.",
     submit: "Send message",
+  },
+  // TODO: CLIENT COPY — the owning real-estate firm's name, copy, and assets
+  // are not yet known; everything below is placeholder. cta.href stays
+  // undefined until the firm has a URL — the banner falls back to a tel: link
+  // using site.phone.
+  ownerPromo: {
+    eyebrow: "[Placeholder] Owned & managed by",
+    heading: "[Placeholder] An East Bay real-estate firm",
+    blurb:
+      "[Placeholder copy] Richmond Square is owned and managed by a local real-estate firm that works directly with tenants and clients across the East Bay — leasing, buying, and selling.",
+    cta: { label: "Get in touch" }, // TODO: CLIENT DATA — firm URL when one exists
+    // logo / logoAlt: TODO: CLIENT ASSET — firm logo for the banner.
   },
   forms: {
     labels: {

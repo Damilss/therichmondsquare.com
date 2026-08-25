@@ -5,10 +5,12 @@
 // Do not edit names or phone numbers without re-checking the original sheet.
 //
 // email / website / instagram / hours are not yet available from the client —
-// they stay undefined until the data arrives. Card behavior is data-driven:
-// a business with `website` renders the external-link card; without one it
-// renders the expand-in-place card. Filling in a field here is all it takes
-// to light it up across the site (cards, JSON-LD, footer).
+// they stay undefined until the data arrives. Every business renders an
+// expand-in-place card; optional fields (website, email, hours) light up
+// inside the expanded panel once filled — and across the site (JSON-LD,
+// footer).
+//
+// amazonia-acai-sf (Suite 105) removed 2026-08-24 per owner.
 
 export const BUSINESS_CATEGORIES = [
   "Food & Drink",
@@ -90,14 +92,6 @@ export const businesses: Business[] = [
     description: "Phone repair and service in Suite 102C.",
     suite: "102C",
     phone: "(865)591-1423", // verbatim from sheet — (865) is a TN area code; owner to double-check
-  },
-  {
-    slug: "amazonia-acai-sf",
-    name: "Amazonia Acai SF",
-    category: "Food & Drink",
-    description: "Acai bowls and more in Suite 105.",
-    suite: "105",
-    phone: "(415)240-3875", // contact on sheet: Wonderson
   },
   {
     slug: "salvadorian-attorney",

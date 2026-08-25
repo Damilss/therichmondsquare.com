@@ -21,9 +21,9 @@ Next.js 16 App Router · React 19 · TypeScript (strict, `@/*` → repo root) ·
 
 ## What this is
 
-A single-page marketing site for Richmond Square, a retail plaza at 12669 San Pablo Ave, Richmond CA, with ten tenants. Navigation is anchor-based (`#directory`, `#about`, `#leasing`, `#visit`, `#contact`) — there are no sub-routes.
+A single-page marketing site for Richmond Square, a retail plaza at 12669 San Pablo Ave, Richmond CA, with nine tenants. Navigation is anchor-based (`#directory`, `#about`, `#leasing`, `#visit`, `#contact`) — there are no sub-routes.
 
-**Current state:** the content layer, design tokens, and layout chrome (header/footer/motion provider) are built; `app/page.tsx` is still the untouched `create-next-app` scaffold. The sections that `site.nav` links to do not exist yet, and neither does the contact/leasing form handler. Assume a section is unbuilt rather than missing until you have grepped for it.
+**Current state:** the content layer, design tokens, layout chrome (header/footer/motion provider), the `#directory` section (3x3 grid of expandable cards), and the owner-promo banner are built. The other sections `site.nav` links to (`#about`, `#leasing`, `#visit`, `#contact`) do not exist yet, and neither does the contact/leasing form handler. Assume a section is unbuilt rather than missing until you have grepped for it.
 
 ## Architecture
 
@@ -32,7 +32,7 @@ A single-page marketing site for Richmond Square, a retail plaza at 12669 San Pa
 `content/site.ts` and `content/businesses.ts` hold every user-visible string and all tenant data. **Components import from there and hardcode nothing** — not copy, not the address, not the phone number, not aria-labels. `site` is typed by the exported `SiteContent` type, so adding copy means extending that type first.
 
 - `content/site.ts` — address, geo, phone, hours, nav, per-section headings/CTAs, all form labels/placeholders/validation strings, footer, legal, social.
-- `content/businesses.ts` — the tenant list, transcribed verbatim from the owner's sheet. Card rendering is data-driven: a business with `website` gets the external-link card, one without gets the expand-in-place card. Filling in a field (`email`, `hours`, `instagram`) lights it up everywhere at once — cards, footer, JSON-LD.
+- `content/businesses.ts` — the tenant list, transcribed verbatim from the owner's sheet. Every business renders an expand-in-place card; optional fields (`website`, `email`, `hours`) render inside the expanded panel once filled. Filling in a field lights it up everywhere at once — cards, footer, JSON-LD.
 
 `TODO: CLIENT DATA` / `TODO: CLIENT COPY` / `[Placeholder]` mark values still awaiting the owner. Never invent a real-world value (hours, coordinates, a tenant's description) to clear one — leave the marker and flag it.
 
